@@ -11,7 +11,7 @@ let sets = {'11111111': {
   }
 }}
 
-app.get('/get' (res, req) => {
+app.get('/get', (req, res) => {
   let code = res.query.code;
   if(Object.keys(sets).indexOf(code) == -1) res.send({status: false});
   else res.send({status: true, set: sets[code]});
@@ -19,8 +19,8 @@ app.get('/get' (res, req) => {
 
 app.use(express.static("static"));
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 4000;
 
 server.listen(port, () => {
-  console.log("server up on port 3000");
+  console.log("server up on port " + port);
 });
