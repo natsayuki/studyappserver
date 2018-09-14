@@ -12,7 +12,7 @@ let sets = {'11111111': {
 }}
 
 app.get('/get', (req, res) => {
-  let code = res.query.code;
+  let code = req.query.code;
   if(Object.keys(sets).indexOf(code) == -1) res.send({status: false});
   else res.send({status: true, set: sets[code]});
 });
