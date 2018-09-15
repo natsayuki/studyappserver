@@ -5,7 +5,7 @@ const app = express();
 const server = http.Server(app);
 
 let sets = {'11111111': {
-  title: 'test app',
+  title: 'test terms',
   terms: {
     'term1': 'answer1',
     'term2': 'answer2',
@@ -21,7 +21,15 @@ let sets = {'11111111': {
     'term12': 'answer12',
     'term13': 'answer13',
   }
-}}
+},
+'00000000': {
+  title: 'short test terms',
+  terms: {
+    'term1': 'answer1',
+    'term2': 'answer2'
+  }
+}
+}
 
 app.get('/get', (req, res) => {
   let code = req.query.code;
